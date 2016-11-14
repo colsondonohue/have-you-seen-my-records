@@ -1,0 +1,26 @@
+.input {
+  font: 300 1.5em 'Montserrat', 'sans-serif';
+  appearance: none;
+  background-color: #f4f4f4;
+  border: none;
+  border-bottom: solid 1px #c0c6ce;
+  color: #3B3B3B;
+  display: block;
+  font-family: sans-serif;
+  margin: 2em auto;
+  max-width: 250px;
+  transition: border 0.3s;
+  width: 70%;
+}
+
+.input:focus {
+  border-bottom: solid 1px #3B3B3B;
+  outline: none;
+}
+
+.intro {
+  color: #3B3B3B;
+  font: 300 1.5em 'Montserrat', 'sans-serif';
+  margin: 0 auto;
+  max-width: 400px;
+}

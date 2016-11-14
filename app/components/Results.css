@@ -1,0 +1,10 @@
+.results {
+  margin-top: 1.5em;
+}
+
+.text {
+  color: #3B3B3B;
+  font: 400 1.5em 'Montserrat', 'sans-serif';
+  margin: 1em auto;
+  max-width: 400px;
+}

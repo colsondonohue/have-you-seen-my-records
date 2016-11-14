@@ -1,0 +1,17 @@
+.button {
+  background-color: #f4f4f4;
+  border-radius: 0;
+  border: 1px solid #3B3B3B;
+  color: #3B3B3B;
+  font: 400 0.8em 'Montserrat', sans-serif;
+  padding: 1em;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #3B3B3B;
+  color: #f4f4f4;
+  cursor: pointer;
+}

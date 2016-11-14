@@ -1,0 +1,32 @@
+.text {
+  color: #3B3B3B;
+  display: block;
+  font: 3em 'Bungee Shade', sans-serif;
+  height: 2.4166666667em;
+  margin: 0.2em auto 0.3em;
+  padding-top: 0;
+}
+
+.cursor {
+  font-family: 'Montserrat', sans-serif;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    color: transparent;
+  }
+  50% {
+    color: #3B3B3B;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text {
+    font-size: 2.2em;
+    height: 3.625em;
+  }
+}

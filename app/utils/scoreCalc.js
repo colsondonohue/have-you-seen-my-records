@@ -29,7 +29,7 @@ function calcObscurityScore(listeningInfo) {
 // returns sum of critic scores weighted by playcount
 function calcCriticScore(listeningInfo) {
   const scoreArr =  listeningInfo.map(info => (
-    axios.get(`https://api.morph.io/colsondonohue/pitchfork_review_data/data.json?key=lmjzYusD1Q9rBM0l4P1h&query=select%20score%20from%20'data'%20where%20artists%20like%20'%25${encodeURIComponent(info.artist)}%25'%20and%20album%20like%20'%25${info.album.indexOf('\'') != -1 ? encodeURIComponent(info.album.substr(0, info.album.indexOf('\''))) : encodeURIComponent(info.album)}%25'`)
+    axios.get(`http://crossorigin.me/https://api.morph.io/colsondonohue/pitchfork_review_data/data.json?key=lmjzYusD1Q9rBM0l4P1h&query=select%20score%20from%20'data'%20where%20artists%20like%20'%25${encodeURIComponent(info.artist)}%25'%20and%20album%20like%20'%25${info.album.indexOf('\'') != -1 ? encodeURIComponent(info.album.substr(0, info.album.indexOf('\''))) : encodeURIComponent(info.album)}%25'`)
       .then(response => response.data[0].score * 5 * parseInt(info.plays))
       .catch((error) => {
         console.log(info.album + ' - ' + info.artist + ': ' + error);

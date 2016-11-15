@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
-  filename: 'index.html',
+  filename: '200.html',
   inject: 'body'
 });
 var ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
@@ -26,11 +26,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss'
-        ]
+        loader: ExtractTextPluginConfig.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       }
     ]
   },

@@ -8,7 +8,7 @@
 }
 
 .cursor {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   animation-name: blink;
   animation-duration: 1s;
   animation-timing-function: step-end;

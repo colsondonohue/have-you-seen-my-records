@@ -20,6 +20,7 @@ class HomeContainer extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     this.context.router.push({
       pathname: '/results',
       query: {
@@ -32,7 +33,7 @@ class HomeContainer extends Component {
     return (
       <Home
         onChange={this.handleChange}
-        onClick={this.handleSubmit}
+        onSubmit={this.handleSubmit}
         username={this.state.username}>
       </Home>
     );

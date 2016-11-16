@@ -4,15 +4,15 @@ import styles from './Home.css';
 
 const propTypes = {
   onChange: React.PropTypes.func.isRequired,
-  onClick: React.PropTypes.func.isRequired,
+  onSubmit: React.PropTypes.func.isRequired,
   username: React.PropTypes.string.isRequired
 };
 
-function Home ({ onChange, onClick, username }) {
+function Home ({ onChange, onSubmit, username }) {
   return (
     <div>
       <h2 className={styles.intro}>Learn how credible you are from Pitchfork, the fount of indie knowledge</h2>
-      <form onSubmit={onClick}>
+      <form onSubmit={onSubmit}>
         <input
           placeholder="Last.fm Username"
           value={username}

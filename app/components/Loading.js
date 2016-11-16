@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { IoMap, IoLockCombination, IoScissors, IoBeer, IoMicB } from 'react-icons/lib/io';
+import { IoMap, IoLockCombination, IoScissors, IoBeer, IoMicB, IoLevels, IoPaintbrush, IoClock } from 'react-icons/lib/io';
 import styles from './Loading.css';
 
 const propTypes = {
@@ -9,9 +9,18 @@ const propTypes = {
 };
 
 const defaultProps = {
-  icons: [<IoMap />, <IoLockCombination />, <IoScissors />, <IoBeer />, <IoMicB />],
-  messages: ['Searching for user info', 'Cracking the code', 'Trimming loose ends', 'Taking a load off', 'Testing, testing, 1, 2, 1, 2'],
-  waitTime: 1400
+  icons: [<IoMap />, <IoLockCombination />, <IoScissors />, <IoBeer />, <IoLevels />, <IoMicB />, <IoPaintbrush />, <IoClock />],
+  messages: [
+    'Searching for user info',
+    'Cracking the code',
+    'Trimming loose ends',
+    'Taking a load off',
+    'Tweaking the levels',
+    'Testing, testing, 1, 2, 1, 2',
+    'Painting happy little trees',
+    'Is this still loading?'
+  ],
+  waitTime: 1600
 };
 
 class Loading extends Component {
@@ -22,10 +31,10 @@ class Loading extends Component {
   }
 
   componentDidMount() {
-    const { waitTime } = this.props;
+    const { messages, waitTime } = this.props;
     this.interval = setInterval(() => {
       this.setState({
-        current: this.state.current % 4 + 1
+        current: (this.state.current + 1 ) % messages.length
       });
     }, waitTime);
   }

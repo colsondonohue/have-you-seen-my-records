@@ -1,11 +1,13 @@
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
-  filename: 'index.html',
+  filename: '200.html',
   inject: 'body'
 });
+var ExtractTextPluginConfig = new ExtractTextPlugin('styles.css');
 
 module.exports = {
   entry: [
@@ -24,10 +26,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
+        loader: ExtractTextPluginConfig.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       }
     ]
   },
   postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, ExtractTextPluginConfig]
 };
